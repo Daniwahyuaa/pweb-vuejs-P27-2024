@@ -28,7 +28,7 @@ export default defineComponent({
   <nav class="bg-navy p-4">
     <div class="container mx-auto flex justify-between items-center">
       <div class="flex items-center space-x-4">
-        <h3 class="text-beige font-bold">Book App PWEB A | P8 </h3>
+        <h3 class="text-beige font-bold">Book App PWEB A | P27 </h3>
       </div>
       <div class="md:hidden">
         <button @click="toggleMenu" class="text-beige focus:outline-none">
