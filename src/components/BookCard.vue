@@ -11,7 +11,7 @@ export interface BookObject {
   initialQty: number;
   qty: number;
   publisher: string;
-  coverImage: string;
+  coverImage?: string;  // Pastikan ada properti coverImage
 }
 
 export default {
@@ -34,21 +34,29 @@ export default {
 </script>
 
 <template>
-  <div class="rounded-xl px-6 pt-6 pb-8 bg-beige" style="width: 250px;">
+  <div class="border border-black rounded-xl px-6 pt-6 pb-8">
+    <!-- Menggunakan coverImage jika ada, jika tidak, menggunakan placeholder -->
     <img
-      :src="book.coverImage"
-      alt="{{ book.title }}"
-      class="w-full"
+      :src="book.coverImage || 'https://placehold.co/300x200'"
+      alt="Cover Image"
+      class="rounded-xl mb-4 w-full"
     />
-    <h3 class="text-lg font-bold text-left text-navy mt-2">
-      {{ book.title }}
+    <h3 class="text-xl font-bold text-left">
+      {{ book.title }} | {{ book.author }}
     </h3>
-    <h4 class="text-sm font-semibold text-left text-navy">
-      By: {{ book.author }}
-    </h4>
+    <hr class="my-2 border border-black" />
+    <h5 class="text-md font-medium text-left">
+      Published: {{ book.publishedDate }} by {{ book.publisher }}
+    </h5>
+    <h5 class="text-md font-medium text-left">
+      Category: {{ book.tags.join(", ") }}
+    </h5>
+    <h5 class="text-md font-medium text-left">
+      Quantity: {{ book.qty }} of {{ book.initialQty }} books
+    </h5>
     <RouterLink
       :to="getReadMoreLink(book._id)"
-      class="px-4 text-white py-1 bg-navy font-semibold rounded-md inline-block mt-2"
+      class="px-4 text-white py-2 bg-blue-400 font-semibold rounded-xl inline-block mt-2"
       >Read More</RouterLink
     >
   </div>
