@@ -78,7 +78,7 @@ export default {
 
     <!-- Footer Section -->
     <footer class="footer bg-navy text-beige py-4 text-center">
-      <p>&copy; 2024 Book Gallery App P8. All rights reserved.</p>
+      <p>&copy; 2024 Book Gallery App P27. All rights reserved.</p>
     </footer>
   </main>
 </template>
