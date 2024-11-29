@@ -9,9 +9,9 @@ export interface BookObject {
   publishedDate: string;
   tags: string[];
   initialQty: number;
-  qty: number;
+  qty: number; 
   publisher: string;
-  coverImage?: string;  // Pastikan ada properti coverImage
+  coverImage?: string;  // Pastikan ada properti coverImage (WAJIB!!!)
 }
 
 export default {
